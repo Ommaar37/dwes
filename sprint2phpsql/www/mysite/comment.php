@@ -4,11 +4,11 @@
 <html>
 	<body>
 	<?php
-		$pelicula_id  = $_POST['pelicula_id'];
+		$cancion_id  = $_POST['cancion_id'];
 		$comentario = $_POST['new_comment'];
 		$fecha = date('Y-m-d');
 
-		$query = "INSERT INTO tComentarios (comentarios, usuario_id, pelicula_id, fecha) VALUES ('".$comentario."', NULL, ".$pelicula_id.",'".$fecha."');";
+		$query = "INSERT INTO tComentarios (comentarios, usuario_id, cancion_id, fecha) VALUES ('".$comentario."', NULL, ".$cancion_id.",'".$fecha."');";
 echo $query;
 	 	mysqli_query($db, $query) or die('Error');
 
@@ -16,7 +16,7 @@ echo $query;
 		echo mysqli_insert_id($db);
 		echo " añadido </p>";
 
-		echo "<a href='/detail.php?pelicula_id=".$pelicula_id;
+		echo "<a href='/detail.php?cancion_id=".$cancion_id;
 		echo "'>Volver</a>";
 		mysqli_close($db);
 	?>

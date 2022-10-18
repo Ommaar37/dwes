@@ -4,11 +4,11 @@
 <html>
 	<body>
 		<?php
-			if (!isset($_GET['pelicula_id'])){
-				die('No se ha especificado una pelicula');
+			if (!isset($_GET['cancion_id'])){
+				die('No se ha especificado una cancion');
 			}
-			$pelicula_id = $_GET['pelicula_id'];
-			$query = 'SELECT * FROM tPeliculas WHERE id='.$pelicula_id;
+			$cancion_id = $_GET['cancion_id'];
+			$query = 'SELECT * FROM tCanciones WHERE id='.$cancion_id;
 			$result = mysqli_query($db, $query) or die ('Query error');
 			$only_row = mysqli_fetch_array($result);
 			echo '<h1>'.$only_row['1'].'</h1>';
@@ -20,7 +20,7 @@
 		<h3>Comentarios</h3>
 		<ul>
 			<?php
-				$query2 = 'SELECT * FROM tComentarios WHERE pelicula_id='.$pelicula_id;
+				$query2 = 'SELECT * FROM tComentarios WHERE cancion_id='.$cancion_id;
 				$result2 = mysqli_query($db, $query2) or die('Query error2');
 				while ($row = mysqli_fetch_array($result2)){
 					$fecha = $row['fecha'];
