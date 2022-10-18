@@ -1,5 +1,5 @@
 <?php
-$db = mysqli_connect('localhost', 'root', '1234', 'web_canciones') or die('Fail');
+$db = mysqli_connect('localhost', 'root', '1234', 'tCanciones') or die('Fail');
 ?>
 <html>
 <body>
@@ -14,6 +14,23 @@ $only_row = mysqli_fetch_array($result);
 echo '<h1>'.$only_row['titulo'].'</h1>';
 echo '<h2>'.$only_row['año'].'</h2>';
 ?>
+$query = 'SELECT * FROM tCanciones WHERE id=$cancion_id';
+			
+			$result = mysqli_query($db, $query) or die('Query error');
+			//Recorrer el resultado
+			while ($row = mysqli_fetch_array($result)){
+			echo $row[0];
+			echo '<br>';
+			echo  $row['1'];
+			echo '<br>';
+			echo '<img src="'.$row['2'];
+			echo '">';
+			echo '<br>';
+			echo $row['3'];
+			echo '<br>';
+			echo $row['4'];
+			echo '<br>';
+			}
 <h3>Comentarios:</h3>
 <ul>
 <?php
