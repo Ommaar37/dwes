@@ -1,4 +1,4 @@
-def func_factorial():
+def func_factorial2():
     return fact
 num = int(input("Introduce un número:"))
 fact = 1
