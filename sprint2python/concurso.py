@@ -39,4 +39,4 @@ else:
 print("Puntuación total:")
 print("Su puntuación total es de...")
 print(puntuation)
-
+ 
