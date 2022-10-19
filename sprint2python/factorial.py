@@ -1,9 +1,6 @@
-def func_factorial(a, b):
-    return fact
-num = int(input("Introduce un número:"))
-fact = 1
-for i in range(1 , num +1):
-    fact = fact * i
-print ("El factorial de %d es : %d"%(num, fact))
-
- 
+def func_factorial():
+    numero = int(print("Introduce un número para realizar un factorial de forma recursiva."))
+    if numero <= 1:
+        return 1
+    else:
+        return numero*func_factorial(numero-1)
