@@ -1,3 +1,4 @@
+from factorial import func_factorial
 print("Concurso!!")
 print("Se le realizaran 3 preguntas que cada una correcta suma 10 puntos y cada erronea resta 5.")
 print("Al finalizar las 3 se le mostrará el resultado final.")
