@@ -1,44 +1,83 @@
-from ast import If
-from factorial import func_factorial
-from factorial2 import func_factorial_no_recursiva
-import time
-
+from random import randint
 def respuesta():
-    print ("Desea realizar el factorial de forma recursiva ('A') o de forma no recursiva ('B'): ")
-    opcion = (input("Introduzca su opción: "))
-    opcion = opcion.upper()
-    while(opcion != 'A' and opcion != 'B'):
+    r = input("¿Cúal es tu respuesta?")
+    re = r.upper()
+    while (re != 'A' and re != 'B' and re != 'C'):
+        print("Solamente se aceptan como respuesta 'A', 'B' o 'C'. Inténtelo de nuevo.")
         print ("")
-        print ("Respuesta incorrecta, sólo se acepta 'A' o 'B' ")
-        print ("")
-        opcion = (input("Introduzca su opción: "))
-        opcion = opcion.upper()
-    return opcion
-
-#MAIN
-
+        r = input("¿Cúal es tu respuesta?")
+        re = r.upper()
+    return re
+puntuacion = 0
+pregunta_no_elegida = randint(1,3)
 print ("")
-n = (input("Introduzca un número: "))
+print ("********** CONCURSO **********")
 print ("")
+if (pregunta_no_elegida != 1):
+    print ("-------------------------------------------------------------------------------------------")
+    print ("PRIMERA PREGUNTA")
+    print ("¿Cual es el jugador con más balones de oro?")
+    print ("-------------------------------------------------------------------------------------------")
+    print ("")
 
-opcion = respuesta()
-if (opcion == 'A'):
-    print ("Elegida la opción A ('De forma recursiva')")
+    print ("Respuestas posibles: ")
+    print ("A) Messi.")
+    print ("B) Quiles.")
+    print ("C) Danilo Pereira.")
     print ("")
-    tiempo_inicio = time.time()
-    print ("El factorial del número introducido calculado de forma recursiva es: " + str(func_factorial(int(n))))
-    tiempo_final = time.time()
-    print ("")
-    tiempo_total = tiempo_final - tiempo_inicio
-    print ("El tiempo total en ejecutar la función es de: " + str(tiempo_total))
 
-else:
-    print ("Elegida la opción B ('De forma no recursiva')")
-    print ("")
-    tiempo_inicio = time.time()
-    print ("El factorial del número introducido calculado de forma no recursiva es: " + str(func_factorial_no_recursiva(int(n))))
-    tiempo_final = time.time()
-    print ("")
-    tiempo_total = tiempo_final - tiempo_inicio
-    print ("El tiempo total en ejecutar la función es de: " + str(tiempo_total))
+    r = respuesta()
 
+    print ("")
+    if r == 'B':
+        print("Respuesta correcta, +10 puntos.")
+        puntuacion += 10
+    else:
+        print ("Respuesta fallida, -5 puntos.")
+        puntuacion -=5
+if (pregunta_no_elegida != 2):
+    print ("-------------------------------------------------------------------------------------------")
+    print ("SEGUNDA PREGUNTA")
+    print ("¿Cual es el mejor día del mes?")
+    print ("-------------------------------------------------------------------------------------------")
+    print ("")
+
+    print ("Respuestas posibles: ")
+    print ("A) 12.")
+    print ("B) 28.")
+    print ("C) 14.")
+    print ("")
+
+    r = respuesta()
+
+    print ("")
+    if r == 'A':
+        print("Respuesta correcta, +10 puntos.")
+        puntuacion += 10
+    else:
+        print ("Respuesta fallida, -5 puntos.")
+        puntuacion -=5
+if (pregunta_no_elegida != 3):
+    print ("-------------------------------------------------------------------------------------------")
+    print ("TERCERA PREGUNTA")
+    print ("¿Cual es el mejor día de entre semana?")
+    print ("-------------------------------------------------------------------------------------------")
+    print ("")
+
+    print ("Respuestas posibles: ")
+    print ("A) Lunes.")
+    print ("B) Miercoles.")
+    print ("C) Viernes.")
+    print ("")
+
+    r = respuesta()
+
+    print ("")
+    if r == 'A':
+        print("Respuesta correcta, +10 puntos.")
+        puntuacion += 10
+    else:
+        print ("Respuesta fallida, -5 puntos.")
+        puntuacion -=5
+print ("")
+print ("El resultado final es de " + str(puntuacion))
