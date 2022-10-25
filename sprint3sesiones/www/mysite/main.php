@@ -1,33 +1,64 @@
-<?php 
-	$db = mysqli_connect('localhost' , 'root' , '1234' , 'mysitedb') or die('Fail')
+<?php
+	$db = mysqli_connect('localhost', 'root','1234','mysitedb') or die('Fail'. mysqli_connect_error());
 ?>
+<html>
 	<head>
 		<style>
-			imgç
+			img{
+				height: 200px;
+				width: 200px;
+				transition: height 0.8s linear 0.2s;
+			}
+			img:hover{
+				height: 444ps;
+			}
+			table, td, th{
+				border-collapse: collapse;
+			}
+			th{
+				color: gray;
+				transition: color 1s linear 0.3s;
+			}
+			th:hover{
+				color:red;
+			}
+			td:hover{
+				background-color: black;
+                color: white;
+			}
+			td{
+				transition: background-color 0.3s linear 0.5s;
+			}
 		</style>
 	</head>
 	<body>
-		<h1>Conexión Establecida</h1>
-		<?php
-			//Lanazar un query.
-			$query = 'SELECT * FROM tCanciones';
-
-			$result = mysqli_query($db, $query) or die('Query Error');
-			//Recorrer el resultado.
-			while ($row = mysqli_fetch_array($result)){
-			echo $row[0];
-			echo '<br>';
-			echo $row['1'];
-			echo '<br>';
-			echo '<img src="'.$row['2'];
-			echo '">';
-			echo '<br>';	
-			echo $row['3'];
-			echo '<br>';	
-			echo $row['4'];
-			echo '<br>';
-			}
-		?>
-		<a href="/logout.php">Logout</a>
+		<h1>Conexión establecida</h1>
+		<table border="1">
+			<tr>
+				<th>ID</th>
+				<th>Título</th>
+				<th>Foto</th>
+				<th>Autor</th>
+				<th>Género</th>
+			</tr>
+			<?php 
+				//Lanzar una query
+				$query = 'SELECT * FROM tCanciones';
+				
+				$result = mysqli_query($db, $query) or die('Query error');
+				//Recorrer el resultado
+				while ($row = mysqli_fetch_array($result)){
+					echo '<tr>';
+					echo '<td>'.$row[0].'</td>';
+					echo '<td>'.$row[1].'</td>';
+					echo '<td><img src="'.$row[2];
+					echo '"></td>';
+					echo '<td>'.$row[3].'</td>';
+					echo '<td>'.$row[4].'</td>';
+					echo '</tr>';
+				}
+			?>
+		</table>
+        <a href="/logout.php">Logout</a>
 	</body>
 </html>
