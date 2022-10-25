@@ -28,5 +28,6 @@
 			echo '<br>';
 			}
 		?>
+		<a href="/logout.php">Logout</a>
 	</body>
 </html>
