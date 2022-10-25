@@ -10,7 +10,8 @@
 				transition: height 0.8s linear 0.2s;
 			}
 			img:hover{
-				height: 444ps;
+				height: 250px;
+				width: 250px;
 			}
 			table, td, th{
 				border-collapse: collapse;
@@ -24,7 +25,7 @@
 			}
 			td:hover{
 				background-color: black;
-                color: white;
+               			color: red;
 			}
 			td{
 				transition: background-color 0.3s linear 0.5s;
