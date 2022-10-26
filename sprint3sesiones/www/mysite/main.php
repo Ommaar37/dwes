@@ -33,7 +33,7 @@
 		</style>
 	</head>
 	<body>
-		<h1>Conexión establecida</h1>
+		<h1 style="atext-align:centre">TABLAS DE CANCIONES.</h1>
 		<table border="1">
 			<tr>
 				<th>ID</th>
