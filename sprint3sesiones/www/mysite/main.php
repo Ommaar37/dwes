@@ -61,6 +61,6 @@
 			?>
 		</table>
 	<a class="boton" href="/logout.php">Logout</a><br><br>
-	<a class="boton" href="/pass.php">Cambio de contraseña</a>
+	<a class="boton" href="/pass.html">Cambio de contraseña</a>
 	</body>
 </html>
