@@ -1,49 +1,32 @@
 
 <html>
-
-<head>
-    <meta charset="UTF-8">
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("formulario").addEventListener('submit', validarFormulario);
-        });
-
-        function validarFormulario(evento) {
-            evento.preventDefault();
-            var contraseñaAtigua= document.getElementById('contraseñaAntigua').value;
-            var contraseñaNueva = document.getElementById('contraseñaNueva').value;
-            var contraseñaNueva2 = document.getElementById('contraseñaNueva2').value;
-
-            if (contraseñaAntigua.length == 0) {
-                alert('No has escrito nada en la contraseña antigua');
-                return;
-            }
-             if (contraseñaNueva.length == 0) {
-                alert('No has escrito nada en la contraseña nueva');
-                return;
-            }
-             if (contraseñaNueva==contraseñaAtigua) {
-                alert('Has escrito la contraseña nueva y la antigua iguales');
-                return;
-            }
-             if (contraseñaNueva!=contraseñaNueva2) {
-                alert('Las contraseñas nuevas no coinciden');
-                return;
-            }
-            this.submit();
-        }
-    </script>
+<head><meta charset="UTF-8"></head>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+	document.getElementById("formulario").addEventListener('submit', validarFormulario);
+	});
+	function validarFormulario(evento) {
+		evento.preventDefault();
+		var mail = document.getElementById('mail').value;
+		var pass = document.getElementById('pass').value;
+	if(mail.length==0){
+		alert('No has escrito nada en el mail');
+		return;
+	}
+	if(pass.length==0){
+		alert('No has escrito nada en la contraseña');
+		return;	
+	}
+	this.submit();
+	}
+</script>
 </head>
-
 <body>
-    <h1>Cambiar contraseña</h1>
-    <form action="pass.php" method="post" id="formulario">
-        <input type="password" name="f_passwordA" placeholder="contraseña antigua" id="contraseñaAntigua"><br>
-        <input type="password" name="f_passwordN" placeholder="contraseña nueva" id="contraseñaNueva"><br>
-        <input type="password" name="f_password" placeholder="contraseña nueva" id="contraseñaNueva2">
-
-        <input type="submit" value="Cambiar contraseña">
-    </form>
+<h1>Login</h1>
+<form action="login.php" method="post" id="formulario">
+<input name="f_email" type="text" placeholder="e-mail" id="mail"><br>
+<input name="f_password" type="password" placeholder="Contraseña" id="pass"><br>
+<input type="submit" value="Iniciar sesión">
+</form>
 </body>
-
 </html>
