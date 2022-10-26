@@ -60,6 +60,7 @@
 				}
 			?>
 		</table>
-        <a href="/logout.php">Logout</a>
+        <a href="/logout.php">Logout</a><br><br>
+	<a href="/logout.php">Logout</a>
 	</body>
 </html>
