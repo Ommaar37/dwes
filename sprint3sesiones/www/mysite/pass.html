@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar contraseña</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("formulario").addEventListener('submit', validarFormulario);
+        });
+
+        function validarFormulario(evento) {
+            evento.preventDefault();
+            var contraseñaAtigua= document.getElementById('contraseñaAntigua').value;
+            var contraseñaNueva = document.getElementById('contraseñaNueva').value;
+            var contraseñaNueva2 = document.getElementById('contraseñaNueva2').value;
+
+            if (contraseñaAntigua.length == 0) {
+                alert('No has escrito nada en la contraseña antigua');
+                return;
+            }
+            
+            if (contraseñaNueva.length == 0) {
+                alert('No has escrito nada en la contraseña nueva');
+                return;
+            }
+            if (contraseñaNueva==contraseñaAtigua) {
+                alert('Has escrito la contraseña nueva y la antigua iguales');
+                return;
+            }
+            if (contraseñaNueva!=contraseñaNueva2) {
+                alert('Las contraseñas nuevas no coinciden');
+                return;
+            }
+            this.submit();
+        }
+    </script>
+</head>
+<body>
+    <h1>Cambio de contraseña</h1>
+    <form action="pass.php" method="post" id="formulario">
+        <input type="password" name="f_passNOW" placeholder="Contraseña Vieja..." id="contraseñaAntigua"><br><br>
+        <input type="password" name="f_passN" placeholder="Nueva Contraseña." id="contraseñaNueva"><br><br>
+        <input type="password" name="f_pass" placeholder="Nueva Contraseña." id="contraseñaNueva2"><br><br>
+
+        <input type="submit" value="Cambiar contraseña."
+    </form>
+</body>
+</html>
