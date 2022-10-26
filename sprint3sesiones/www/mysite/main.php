@@ -60,7 +60,7 @@
 				}
 			?>
 		</table>
-        <a href="/logout.php">Logout</a><br><br>
-	<a href="/logout.php">Logout</a>
+	<a class="boton" href="/logout.php">Logout</a><br><br>
+	<a class="boton" href="/pass.php">Cambio de contraseña</a>
 	</body>
 </html>
